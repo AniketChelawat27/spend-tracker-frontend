@@ -1,0 +1,30 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Only allow access to documents where userId == current user
+    function isOwner() {
+      return request.auth != null
+        && (request.resource == null || request.resource.data.userId == request.auth.uid)
+        && (resource == null || resource.data.userId == request.auth.uid);
+    }
+    match /salaries/{docId} {
+      allow read, write: if isOwner();
+    }
+    match /expenses/{docId} {
+      allow read, write: if isOwner();
+    }
+    match /investments/{docId} {
+      allow read, write: if isOwner();
+    }
+    match /activities/{docId} {
+      allow read, write: if isOwner();
+    }
+    match /members/{docId} {
+      allow read, write: if isOwner();
+    }
+    // funds: doc id = userId (one doc per user)
+    match /funds/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}
