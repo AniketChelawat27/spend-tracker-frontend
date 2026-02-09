@@ -1,4 +1,4 @@
-import React, { useRef, useMemo } from 'react';
+import React, { useRef } from 'react';
 import { useApp } from '../AppContext';
 import { useMembers } from '../MembersContext';
 import type { Expense } from '../types';

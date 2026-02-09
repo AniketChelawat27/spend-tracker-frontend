@@ -114,7 +114,7 @@ export const SalarySection: React.FC = () => {
                 <p className="text-sm font-medium text-clay-green dark:text-green-300">Total salary</p>
                 <p className="text-2xl font-bold text-neutral-900 dark:text-white mt-1">{formatCurrency(totalSalary)}</p>
               </div>
-              {personNames.map((name, i) => (
+              {personNames.map((name) => (
                 <div
                   key={name}
                   className="rounded-2xl border border-border dark:border-border-dark bg-white dark:bg-neutral-900/80 p-6 shadow-float"
