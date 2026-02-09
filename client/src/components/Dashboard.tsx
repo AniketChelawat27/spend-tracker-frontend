@@ -303,7 +303,7 @@ export const Dashboard: React.FC = () => {
                   <CartesianGrid strokeDasharray="3 3" className="opacity-30" />
                   <XAxis dataKey="name" tick={{ fontSize: 12 }} />
                   <YAxis tick={{ fontSize: 12 }} tickFormatter={(v) => `${v / 1000}k`} />
-                  <Tooltip formatter={(v: number) => formatCurrency(v)} contentStyle={{ borderRadius: 12, border: '1px solid var(--border)' }} />
+                  <Tooltip formatter={(v: number | undefined) => (v != null ? formatCurrency(v) : '')} contentStyle={{ borderRadius: 12, border: '1px solid var(--border)' }} />
                   <Legend />
                   <Bar dataKey="salary" fill="#16a34a" name="Salary" radius={[6, 6, 0, 0]} />
                   <Bar dataKey="expenses" fill="#d97706" name="Expenses" radius={[6, 6, 0, 0]} />
@@ -322,7 +322,7 @@ export const Dashboard: React.FC = () => {
                     cx="50%"
                     cy="50%"
                     labelLine={false}
-                    label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                    label={({ name, percent }) => `${name} ${((percent ?? 0) * 100).toFixed(0)}%`}
                     outerRadius={90}
                     dataKey="value"
                   >
@@ -330,7 +330,7 @@ export const Dashboard: React.FC = () => {
                       <Cell key={i} fill={COLORS[i % COLORS.length]} />
                     ))}
                   </Pie>
-                  <Tooltip formatter={(v: number) => formatCurrency(v)} />
+                  <Tooltip formatter={(v: number | undefined) => (v != null ? formatCurrency(v) : '')} />
                 </PieChart>
               </ResponsiveContainer>
             </Panel>
@@ -345,7 +345,7 @@ export const Dashboard: React.FC = () => {
                     cx="50%"
                     cy="50%"
                     labelLine={false}
-                    label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                    label={({ name, percent }) => `${name} ${((percent ?? 0) * 100).toFixed(0)}%`}
                     outerRadius={90}
                     dataKey="value"
                   >
@@ -353,7 +353,7 @@ export const Dashboard: React.FC = () => {
                       <Cell key={i} fill={COLORS[i % COLORS.length]} />
                     ))}
                   </Pie>
-                  <Tooltip formatter={(v: number) => formatCurrency(v)} />
+                  <Tooltip formatter={(v: number | undefined) => (v != null ? formatCurrency(v) : '')} />
                 </PieChart>
               </ResponsiveContainer>
             </Panel>
@@ -371,7 +371,7 @@ export const Dashboard: React.FC = () => {
                 <CartesianGrid strokeDasharray="3 3" className="opacity-30" />
                 <XAxis dataKey="name" tick={{ fontSize: 12 }} />
                 <YAxis tick={{ fontSize: 12 }} tickFormatter={(v) => `${v / 1000}k`} />
-                <Tooltip formatter={(v: number) => formatCurrency(v)} />
+                <Tooltip formatter={(v: number | undefined) => (v != null ? formatCurrency(v) : '')} />
                 <Bar dataKey="amount" radius={[6, 6, 0, 0]}>
                   <Cell fill="#16a34a" />
                   <Cell fill="#d97706" />

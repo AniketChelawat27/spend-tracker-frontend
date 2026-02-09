@@ -14,16 +14,6 @@ const getCategoryIcon: Record<string, string> = {
   Food: '🍽️', Rent: '🏠', Travel: '✈️', Shopping: '🛍️', Bills: '💡', Medical: '⚕️', Other: '📦'
 };
 
-const getCategoryColor: Record<string, string> = {
-  Food: 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200',
-  Rent: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',
-  Travel: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200',
-  Shopping: 'bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-200',
-  Bills: 'bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200',
-  Medical: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200',
-  Other: 'bg-neutral-100 text-neutral-800 dark:bg-neutral-700 dark:text-neutral-200'
-};
-
 /** Clay-style solid card background (white text) */
 const EXPENSE_CARD_BG: Record<string, string> = {
   Food: 'bg-clay-orange',

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useMembers } from '../MembersContext';
-import { Card, Button, Input, Panel } from './UI';
-import { Users, Plus, Trash2, Loader2, UserPlus, ChevronRight } from 'lucide-react';
+import { Button, Input, Panel } from './UI';
+import { Users, Trash2, Loader2, UserPlus, ChevronRight } from 'lucide-react';
 
 /* Clay-style solid blocks: card background + white text */
 const MEMBER_CARD_BG = [
